@@ -11,14 +11,6 @@ from .views import (
 
 router = DefaultRouter()
 
-# Endpoints para doctores:
-#   GET    /api/doctors/           → lista doctores
-#   POST   /api/doctors/           → crear doctor (solo admin)
-#   GET    /api/doctors/{pk}/      → detalle doctor
-#   PUT    /api/doctors/{pk}/      → actualizar doctor (dueño/admin)
-#   DELETE /api/doctors/{pk}/      → borrar doctor (dueño/admin)
-router.register(r'', DoctorViewSet, basename='doctor')
-
 # Endpoints para departamentos:
 #   GET    /api/doctors/departments/
 #   POST   /api/doctors/departments/        (solo admin)
@@ -42,5 +34,13 @@ router.register(r'availabilities', DoctorAvailabilityViewSet, basename='availabi
 #   PUT    /api/doctors/notes/{pk}/           (dueño doctor/admin)
 #   DELETE /api/doctors/notes/{pk}/           (dueño doctor/admin)
 router.register(r'notes', MedicalNoteViewSet, basename='doctornote')
+
+# Endpoints para doctores:
+#   GET    /api/doctors/           → lista doctores
+#   POST   /api/doctors/           → crear doctor (solo admin)
+#   GET    /api/doctors/{pk}/      → detalle doctor
+#   PUT    /api/doctors/{pk}/      → actualizar doctor (dueño/admin)
+#   DELETE /api/doctors/{pk}/      → borrar doctor (dueño/admin)
+router.register(r'', DoctorViewSet, basename='doctor')
 
 urlpatterns = router.urls
