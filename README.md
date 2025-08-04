@@ -76,6 +76,7 @@ Prerequisites
 Installation
 ```bash
 git clone https://github.com/adangond/django-rest.git
+https://github.com/adangond/django-rest
 cd django-rest
 python -m venv .venv
 source .venv/bin/activate
